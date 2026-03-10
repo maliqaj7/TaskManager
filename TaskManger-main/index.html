@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Task Management</h1>
+            <p class="subtitle">Organize your work efficiently</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pendingTasks">0</div>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="inProgressTasks">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="card">
+                    <h2>Create New Task</h2>
+                    <form id="taskForm">
+                        <div class="form-group">
+                            <label for="title">Title *</label>
+                            <input type="text" id="title" required placeholder="Enter task title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea id="description" rows="3" placeholder="Enter task description"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select id="status">
+                                    <option value="Pending">Pending</option>
+                                    <option value="InProgress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <select id="priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="datetime-local" id="dueDate">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span id="submitBtnText">Create Task</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">Cancel</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>Filter & Sort</h3>
+                    <div class="form-group">
+                        <label for="filterStatus">Filter by Status</label>
+                        <select id="filterStatus">
+                            <option value="">All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="InProgress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterPriority">Filter by Priority</label>
+                        <select id="filterPriority">
+                            <option value="">All Priorities</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="card">
+                    <h2>Tasks</h2>
+                    <div id="loadingSpinner" class="loading">Loading tasks...</div>
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                    <div id="tasksList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
