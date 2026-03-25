@@ -265,11 +265,6 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key</code></pre>
   <li>Recurring tasks</li>
 </ul>
 
-<hr>
-
-
-<hr>
-
 <h2>Acknowledgments</h2>
 <ul>
   <li>Built with Vite for a fast and modern development workflow</li>
