@@ -267,10 +267,6 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key</code></pre>
 
 <hr>
 
-<h2>License</h2>
-<p>
-  This project is licensed under the MIT License. See the LICENSE file for more information.
-</p>
 
 <hr>
 
